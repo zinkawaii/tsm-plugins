@@ -1,0 +1,41 @@
+{
+  "name": "@zinkawaii/tsm-plugins",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.4.1",
+  "description": "",
+  "author": "KazariEX",
+  "license": "MIT",
+  "repository": "zinkawaii/tsm-plugins",
+  "keywords": [],
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/plugins/*"
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node --watch",
+    "prepack": "pnpm run build",
+    "release": "bumpp --no-push -c \"release: v%s\"",
+    "eslint": "eslint ."
+  },
+  "dependencies": {
+    "ts-macro": "^0.1.17"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.3.0",
+    "@zinkawaii/eslint-config": "^0.2.0",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.21.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
