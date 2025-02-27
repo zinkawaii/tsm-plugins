@@ -18,9 +18,6 @@
     "src"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "dev": "tsup-node --watch",
-    "prepack": "pnpm run build",
     "release": "bumpp --no-push -c \"release: v%s\"",
     "eslint": "eslint ."
   },
