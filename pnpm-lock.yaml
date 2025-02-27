@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      rollup-utils:
+        specifier: ^0.0.2
+        version: 0.0.2(rollup@4.34.8)
       ts-macro:
         specifier: ^0.1.17
         version: 0.1.17(rollup@4.34.8)(typescript@5.7.3)
@@ -1624,6 +1627,15 @@ packages:
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  rollup-utils@0.0.2:
+    resolution: {integrity: sha512-AG1m8fwwkm20WELaXubxgs8ir1gEN7sv+1FfFyEPJA8HtPjL0JndzpLIVzbXyQ5meBfWfv8OnouZ9AC+OsNP+A==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   rollup@4.34.8:
     resolution: {integrity: sha512-489gTVMzAYdiZHFVA/ig/iYFllCcWFHMvUHI1rpFmkoUtRlQxqh6/yiNqnYibjMZ2b/+FUQwldG+aLsEt6bglQ==}
@@ -3716,6 +3728,15 @@ snapshots:
       supports-preserve-symlinks-flag: 1.0.0
 
   reusify@1.1.0: {}
+
+  rollup-utils@0.0.2(rollup@4.34.8):
+    dependencies:
+      '@types/estree': 1.0.6
+      estree-walker: 2.0.2
+      pathe: 2.0.3
+      picomatch: 4.0.2
+    optionalDependencies:
+      rollup: 4.34.8
 
   rollup@4.34.8:
     dependencies:

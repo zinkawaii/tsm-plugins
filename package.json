@@ -22,6 +22,7 @@
     "eslint": "eslint ."
   },
   "dependencies": {
+    "rollup-utils": "^0.0.2",
     "ts-macro": "^0.1.17"
   },
   "devDependencies": {

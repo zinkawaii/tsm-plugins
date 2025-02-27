@@ -1,11 +1,33 @@
+import { createFilter } from "rollup-utils";
 import { createPlugin } from "ts-macro";
+import type { FilterPattern } from "@rollup/pluginutils";
 import type { Mapping } from "@volar/source-map";
 import type ts from "typescript";
 
-export default createPlugin(({ ts }) => {
+export interface Options {
+    include?: FilterPattern;
+    exclude?: FilterPattern;
+}
+
+export default createPlugin<Options | undefined>(({ ts }, options) => {
+    const {
+        include = /\.d\.ts$/,
+        exclude
+    } = options ?? {};
+
+    const filter = createFilter(
+        include,
+        exclude,
+        { resolve: ts.sys.getCurrentDirectory() }
+    );
+
     return {
         name: "goto-definition",
         resolveVirtualCode(virtualCode) {
+            if (!filter(virtualCode.filePath)) {
+                return;
+            }
+
             (virtualCode as any).linkedCodeMappings ??= [];
             const { ast } = virtualCode;
             visit(ast);
