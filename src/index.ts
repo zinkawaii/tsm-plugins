@@ -1,0 +1,1 @@
+export { default as GotoDefinition } from "./plugins/goto-definition";
