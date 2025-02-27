@@ -1,7 +1,7 @@
 {
   "name": "@zinkawaii/tsm-plugins",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@10.4.1",
   "description": "",
   "author": "KazariEX",
